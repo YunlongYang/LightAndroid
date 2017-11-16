@@ -5,5 +5,5 @@ package online.heyworld.lightandroid.app;
  */
 
 public class TestSwitch {
-    public static final boolean SWITCH_ENABLE = false;
+    public static final boolean SWITCH_ENABLE = true;
 }

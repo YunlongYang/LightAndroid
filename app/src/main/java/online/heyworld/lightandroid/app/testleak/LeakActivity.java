@@ -22,8 +22,8 @@ public class LeakActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Leak Activity Test", Snackbar.LENGTH_LONG)
-                        .setAction("Touch to quit.点击退出", (v)->finish()).show();
+                Snackbar.make(view, getTitle(), Snackbar.LENGTH_LONG)
+                        .setAction(getString(R.string.touch_to_quit), (v)->finish()).show();
             }
         });
 
