@@ -1,5 +1,5 @@
 # LightAndroid
-# [README of Chinese][readme-cn]
+## [README of Chinese][readme-cn]
 LightAndroid Library is used to help android programmer make a light app.
 
 Now, it contains the features etc.
