@@ -1,4 +1,4 @@
-# 轻安卓 LightAndroid [英文版介绍][README]
+# 轻安卓 LightAndroid
 轻安卓是用来帮助安卓程序员开发轻快应用的一个库
 
 目前，它支持以下特性.
