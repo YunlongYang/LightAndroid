@@ -1,3 +1,7 @@
+![logo][logo]
+
+[![auc][aucsvg]][auc] [![api][apisvg]][api] [![build][buildsvg]][build] [![Insight][insightsvg]][insight] [![License][licensesvg]][license]
+
 # LightAndroid
 ## [README of Chinese][readme-cn]
 LightAndroid Library is used to help android programmer make a light app.
