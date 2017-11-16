@@ -27,11 +27,16 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
     implementation "com.android.support:appcompat-v7:$AndroidSupportVersion"
 
-    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
-    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+
+    // Third party library
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$LeakCanaryVersion"
+    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$LeakCanaryVersion"
+
+    implementation "com.github.bumptech.glide:glide:$GlideVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$GlideVersion"
+
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
