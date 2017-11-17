@@ -8,5 +8,4 @@ Now, it contains the features etc.
 2. [Glide](https://github.com/bumptech/glide) Glide is a fast and efficient open source media management and image loading framework for Android that wraps media decoding, memory and disk caching, and resource pooling into a simple and easy to use interface.
 
 
-If you have some good third party library to recommend or got problems when using LightAndroid，
-welcome to submit issues、send emails to me at yunlong17568@qq.com，you can also[join the chat room](https://gitter.im/LightAndroid/Lobby) to discuss.
+If you have some good third party library to recommend or got problems when using LightAndroid, welcome to submit issues, send emails to me at yunlong17568@qq.com, you can also[join the chat room](https://gitter.im/LightAndroid/Lobby) to discuss.
