@@ -39,7 +39,7 @@ public class MainApplication extends Application {
 
 
 ## 注意事项
-- 为了使用LeakCanary, 你需要把以下代码放入你的依赖中. 因为它在调试模式和发行模式下依赖的库是不同的.
+- 为了使用LeakCanary, 你需要把以下代码放入你的依赖中. 因为它在调试模式和发行模式下依赖的库是不同的.你可以在 [gradle.properties](gradle.properties) 找到 $LeakCanaryVersion .
 <pre>
       debugImplementation "com.squareup.leakcanary:leakcanary-android:$LeakCanaryVersion"
       releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$LeakCanaryVersion"

@@ -37,7 +37,7 @@ public class MainApplication extends Application {
 </pre>
 
 ## Attentions
-- To Use LeakCanary, you should add this code to your dependencies. Because LeakCanary will use different library in debug and release.
+- To Use LeakCanary, you should add this code to your dependencies. Because LeakCanary will use different library in debug and release.You can find $LeakCanaryVersion in [gradle.properties](gradle.properties).
 <pre>
       debugImplementation "com.squareup.leakcanary:leakcanary-android:$LeakCanaryVersion"
       releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$LeakCanaryVersion"

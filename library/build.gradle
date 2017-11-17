@@ -37,7 +37,7 @@ dependencies {
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$LeakCanaryVersion"
     releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$LeakCanaryVersion"
 
-    api "com.github.bumptech.glide:glide:$GlideVersion"
+    compile "com.github.bumptech.glide:glide:$GlideVersion"
     annotationProcessor "com.github.bumptech.glide:compiler:$GlideVersion"
 
 
