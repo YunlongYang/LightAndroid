@@ -3,7 +3,9 @@
 buildscript {
     
     repositories {
-        google()
+        // 发布到GitPack上暂不支持google方法
+        //google()
+        maven { url "https://dl.google.com/dl/android/maven2/" }
         jcenter()
     }
     dependencies {
@@ -18,7 +20,9 @@ buildscript {
 
 allprojects {
     repositories {
-        google()
+        // 发布到GitPack上暂不支持google方法
+        //google()
+        maven { url "https://dl.google.com/dl/android/maven2/" }
         jcenter()
     }
 }
