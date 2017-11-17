@@ -1,5 +1,5 @@
 # 轻安卓 LightAndroid [English ReadMe](README.md)
-[![在线交流](http://img.shields.io/badge/chat-online-brightgreen.svg)](https://gitter.im/LightAndroid/Lobby)
+[![交流区](http://img.shields.io/badge/chat-online-brightgreen.svg)](https://gitter.im/LightAndroid/Lobby)
 
 轻安卓是用来帮助安卓程序员开发轻快应用的库
 
