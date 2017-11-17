@@ -1,1 +1,1 @@
-include ':app', ':light-library'
+include ':app', ':library'
