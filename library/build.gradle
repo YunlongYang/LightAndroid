@@ -32,7 +32,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "com.android.support:appcompat-v7:$AndroidSupportVersion"
 
-    
+
     // Third party library
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$LeakCanaryVersion"
     releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$LeakCanaryVersion"
