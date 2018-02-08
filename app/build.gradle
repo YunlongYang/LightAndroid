@@ -10,11 +10,7 @@ android {
         versionCode VersionCode as int
         versionName VersionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        externalNativeBuild {
-            cmake {
-                cppFlags "-fexceptions"
-            }
-        }
+
     }
     buildTypes {
         release {
@@ -22,11 +18,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    externalNativeBuild {
-        cmake {
-            path "CMakeLists.txt"
-        }
-    }
+
     compileOptions {
         targetCompatibility 1.8
         sourceCompatibility 1.8
