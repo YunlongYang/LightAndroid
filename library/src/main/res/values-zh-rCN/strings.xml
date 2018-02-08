@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">轻安卓库</string>
+    <string name="support_feature">支持的特性</string>
+    <string-array name="support_feature">
+        <item>leakcanary
+            内存泄漏检测</item>
+        <item>glide
+            图片加载</item>
+        <item>logback
+            日志</item>
+        <item>RxPermissions
+            权限</item>
+    </string-array>
+</resources>

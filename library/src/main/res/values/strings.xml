@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">light-library</string>
+    <string name="support_feature">Support Features</string>
+    <string-array name="support_feature">
+        <item>leakcanary</item>
+        <item>glide</item>
+        <item>logback</item>
+        <item>RxPermissions</item>
+    </string-array>
 </resources>

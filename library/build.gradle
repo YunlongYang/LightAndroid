@@ -34,11 +34,20 @@ dependencies {
 
 
     // Third party library
+    // 1. leakcanary
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$LeakCanaryVersion"
     releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$LeakCanaryVersion"
 
+    // 2. glide
     compile "com.github.bumptech.glide:glide:$GlideVersion"
     annotationProcessor "com.github.bumptech.glide:compiler:$GlideVersion"
+
+    // 3. logback
+    compile 'org.slf4j:slf4j-api:1.7.25'
+    compile 'com.github.tony19:logback-android:1.1.1-8'
+
+    // 4. RxPermissions
+    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5'
 
 
     testImplementation 'junit:junit:4.12'

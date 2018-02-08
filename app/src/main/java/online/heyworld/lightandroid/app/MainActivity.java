@@ -1,5 +1,6 @@
 package online.heyworld.lightandroid.app;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -7,31 +8,78 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import online.heyworld.lightandroid.app.testleak.LeakActivity;
+import online.heyworld.lightandroid.feature.LightPermissions;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Used to load the 'native-lib' library on application startup.
-    static {
-        System.loadLibrary("native-lib");
-    }
+    private static final Logger log = LoggerFactory.getLogger(MainActivity.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        log.debug("onCreate");
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, LeakActivity.class)));
+        showFeatures();
+    }
 
-        // Example of a call to a native method
+    private void showFeatures(){
         TextView tv = findViewById(R.id.sample_text);
-        tv.setText(stringFromJNI());
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(getResources().getString(online.heyworld.lightandroid.R.string.support_feature)).append("\n");
+        String[] features = getResources().getStringArray(online.heyworld.lightandroid.R.array.support_feature);
+        for(int i=0;i<features.length;i++){
+            stringBuilder.append(i+1).append(". ").append(features[i]).append("\n");
+            log.info("Features:{}",features[i]);
+        }
+        tv.setText(stringBuilder.toString());
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        log.debug("onResume");
+        checkPermissions();
+    }
+
+    public void checkPermissions(){
+        LightPermissions.checkPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, new LightPermissions.Listener() {
+            @Override
+            public void onGranted(String permission) {
+
+            }
+
+            @Override
+            public void onDenied(String permission) {
+                stopCheck();
+                Toast.makeText(MainActivity.this,"权限不足，将退出",Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        log.debug("onPause");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        log.debug("onDestroy");
     }
 
     @Override
@@ -56,9 +104,5 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A native method that is implemented by the 'native-lib' native library,
-     * which is packaged with this application.
-     */
-    public native String stringFromJNI();
+
 }

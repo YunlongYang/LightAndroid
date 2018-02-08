@@ -1,9 +1,16 @@
 package online.heyworld.lightandroid;
 
 import android.app.Application;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import online.heyworld.lightandroid.feature.LightLeakCanary;
 
 /**
  * LightAndroidApplicationLike
@@ -22,19 +29,31 @@ import com.squareup.leakcanary.RefWatcher;
 
 public class LightAndroidApplicationLike {
 
+    private static final Logger log = LoggerFactory.getLogger(LightAndroidApplicationLike.class);
+
     public void onCreate(Application application){
-        setupLeakCanary(application);
+        init(application);
     }
 
-    /**
-     *
-     * @param application
-     * @return
-     */
-    protected RefWatcher setupLeakCanary(Application application) {
-        if (LeakCanary.isInAnalyzerProcess(application)) {
-            return RefWatcher.DISABLED;
+    private void init(Application application){
+        log.debug("LightAndroid start install");
+        checkLog(application);
+        LightLeakCanary.start(application);
+    }
+
+
+
+
+
+    protected void checkLog(Application application){
+        log.debug("AppLabel:\t{}",application.getResources().getString(application.getApplicationInfo().labelRes));
+        log.debug("Package:\t{}",application.getPackageName());
+        try {
+            PackageInfo packageInfo = application.getPackageManager().getPackageInfo(application.getPackageName(),0);
+            log.debug("Version:\t{}",packageInfo.versionCode);
+            log.debug("VerName:\t{}",packageInfo.versionName);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
         }
-        return LeakCanary.install(application);
     }
 }
