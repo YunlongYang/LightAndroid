@@ -6,6 +6,10 @@ LightAndroid Library is used to help android programmer make a light app.
 ## Now, it contains the features etc.
 1. [LeakCanary](https://github.com/square/leakcanary) A memory leak detection library for Android and Java.
 2. [Glide](https://github.com/bumptech/glide) Glide is a fast and efficient open source media management and image loading framework for Android that wraps media decoding, memory and disk caching, and resource pooling into a simple and easy to use interface.
+3. [logback](https://github.com/tony19/logback-android)The reliable, generic, fast and flexible logging framework for Java on Android.
+4. [RxPermissions](https://github.com/tbruyelle/RxPermissions) This library allows the usage of RxJava with the new Android M permission model.
+    -[LightPermissions](https://github.com/YunlongYang/LightAndroid/blob/master/library/src/main/java/online/heyworld/lightandroid/feature/LightPermissions.java) LightPermissions is RxPermissions enhanced in LightAndroid.
+
 
 ## How To Use?
 Step 1. Add it in your root build.gradle at the end of repositories:
