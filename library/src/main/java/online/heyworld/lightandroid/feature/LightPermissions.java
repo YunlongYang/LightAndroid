@@ -5,6 +5,8 @@ import android.os.Build;
 
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
+import online.heyworld.lightandroid.compat.BuildCompat;
+
 /**
  * LightPermissions
  * 方便检查应用权限
@@ -21,7 +23,7 @@ public class LightPermissions {
      * @param listener 权限检查结果回调
      */
     public static void checkPermissions(Activity activity , String[] permissions, Listener listener){
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        if(Build.VERSION.SDK_INT >= BuildCompat.VERSION_CODES.M) {
             RxPermissions rxPermissions = new RxPermissions(activity);
             for (String permission : permissions) {
                 if (listener.continueCheck) {
