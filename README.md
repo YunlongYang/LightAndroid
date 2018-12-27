@@ -1,6 +1,6 @@
 # LightAndroid [简体中文说明](README-CN.md)
 [![Gitter Chat](http://img.shields.io/badge/chat-online-brightgreen.svg)](https://gitter.im/LightAndroid/Lobby)
-
+[![](https://jitpack.io/v/yunlongyang/lightandroid.svg)](https://jitpack.io/#yunlongyang/lightandroid)
 LightAndroid Library is used to help android programmer make a light app.
 
 ## Now, it contains the features etc.
@@ -24,7 +24,7 @@ allprojects {
 Step 2. Add the dependency
 <pre>
 dependencies {
-    compile 'com.github.YunlongYang:LightAndroid:$LightAndroidVersion'
+    implementation 'com.github.yunlongyang:lightandroid:1.0.2'
 }
 </pre>
 Step 3.　Start LightAndroid in your application.
