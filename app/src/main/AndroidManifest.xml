@@ -27,7 +27,8 @@
         <activity
             android:name=".testleak.LeakActivity"
             android:label="@string/title_activity_leak"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".test.permissions.LightPermissionActivity"></activity>
     </application>
 
 </manifest>

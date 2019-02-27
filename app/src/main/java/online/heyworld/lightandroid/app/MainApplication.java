@@ -13,7 +13,7 @@ public class MainApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        lightAndroidApplicationLike = new LightAndroidApplicationLike();
+        lightAndroidApplicationLike = new LightAndroidApplicationLike.Builder().setLeakCanaryEnable(false).build();
         lightAndroidApplicationLike.onCreate(this);
     }
 }

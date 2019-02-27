@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">轻安卓</string>
+    <string name="app_name">轻小测</string>
     <string name="action_settings">设置</string>
     <string name="title_activity_leak">内存泄漏测试活动</string>
 

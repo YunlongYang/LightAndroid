@@ -8,7 +8,7 @@
             图片加载</item>
         <item>logback
             日志</item>
-        <item>RxPermissions
+        <item>LightPermissions
             权限</item>
     </string-array>
 </resources>

@@ -7,9 +7,9 @@
 1. [LeakCanary](https://github.com/square/leakcanary) 为安卓和Java提供内存泄露检测的库.
 2. [Glide](https://github.com/bumptech/glide) Glide 是一个为安卓平台提供的快速、高效、开源的媒体管理和图片加载框架,功能包括媒体解码,内存/硬盘缓存和资源池,用户交互简单方便.
 3. [logback](https://github.com/tony19/logback-android) 安卓平台上 Java实现的可靠，通用，快速，灵活 的日志框架
-4. [RxPermissions](https://github.com/tbruyelle/RxPermissions) 用RxJava的方式使用安卓M版本的权限模型.
-    -[LightPermissions](https://github.com/YunlongYang/LightAndroid/blob/master/library/src/main/java/online/heyworld/lightandroid/feature/LightPermissions.java) LightPermissions 是 LightAndroid 对 RxPermissions的增强类.
-
+4. [LightPermissions](https://github.com/YunlongYang/LightAndroid/blob/master/library/src/main/java/online/heyworld/lightandroid/feature/LightPermissions.java) 
+LightPermissions 是 我们自己开发的安卓权限辅助工具类，您可以参考这个类来了解它的使用方法
+[LightPermissionActivity](https://github.com/YunlongYang/LightAndroid/blob/master/app/src/main/java/online/heyworld/lightandroid/app/test/permissions/LightPermissionActivity.java)
 ## 怎么使用?
 第一步, 把GitPack.IO添加你的根工程的repositories列表中:
 <pre>
@@ -21,9 +21,10 @@ allprojects {
 }
 </pre>
 第二步, 添加对LightAndroid的依赖
+[![](https://jitpack.io/v/yunlongyang/lightandroid.svg)](https://jitpack.io/#yunlongyang/lightandroid)
 <pre>
 dependencies {
-    compile 'com.github.YunlongYang:LightAndroid:$LightAndroidVersion'
+    implementation 'com.github.yunlongyang:lightandroid:version'
 }
 </pre>
 
@@ -34,8 +35,8 @@ public class MainApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        lightAndroidApplicationLike = new LightAndroidApplicationLike();
-        lightAndroidApplicationLike.onCreate(this);
+        lightAndroidApplicationLike = new LightAndroidApplicationLike.Builder().setLeakCanaryEnable(true/false).build();
+                       lightAndroidApplicationLike.onCreate(this);
     }
 }
 </pre>

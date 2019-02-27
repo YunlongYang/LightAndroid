@@ -5,6 +5,6 @@
         <item>leakcanary</item>
         <item>glide</item>
         <item>logback</item>
-        <item>RxPermissions</item>
+        <item>LightPermissions</item>
     </string-array>
 </resources>

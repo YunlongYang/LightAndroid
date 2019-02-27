@@ -31,6 +31,19 @@ public class LightAndroidApplicationLike {
 
     private static final Logger log = LoggerFactory.getLogger(LightAndroidApplicationLike.class);
 
+    public static class Builder{
+        public Builder setLeakCanaryEnable(boolean leakCanaryEnable) {
+            LightLeakCanary.Switch.setEnable(leakCanaryEnable);
+            return this;
+        }
+        public LightAndroidApplicationLike build(){
+            return new LightAndroidApplicationLike();
+        }
+    }
+
+    private LightAndroidApplicationLike() {
+    }
+
     public void onCreate(Application application){
         init(application);
     }

@@ -7,8 +7,8 @@ LightAndroid Library is used to help android programmer make a light app.
 1. [LeakCanary](https://github.com/square/leakcanary) A memory leak detection library for Android and Java.
 2. [Glide](https://github.com/bumptech/glide) Glide is a fast and efficient open source media management and image loading framework for Android that wraps media decoding, memory and disk caching, and resource pooling into a simple and easy to use interface.
 3. [logback](https://github.com/tony19/logback-android)The reliable, generic, fast and flexible logging framework for Java on Android.
-4. [RxPermissions](https://github.com/tbruyelle/RxPermissions) This library allows the usage of RxJava with the new Android M permission model.
-    -[LightPermissions](https://github.com/YunlongYang/LightAndroid/blob/master/library/src/main/java/online/heyworld/lightandroid/feature/LightPermissions.java) LightPermissions is RxPermissions enhanced in LightAndroid.
+4. [LightPermissions](https://github.com/YunlongYang/LightAndroid/blob/master/library/src/main/java/online/heyworld/lightandroid/feature/LightPermissions.java) LightPermissions is build by our self for android permission.
+You can use it like [LightPermissionActivity](https://github.com/YunlongYang/LightAndroid/blob/master/app/src/main/java/online/heyworld/lightandroid/app/test/permissions/LightPermissionActivity.java).
 
 
 ## How To Use?
@@ -22,9 +22,10 @@ allprojects {
 }
 </pre>
 Step 2. Add the dependency
+[![](https://jitpack.io/v/yunlongyang/lightandroid.svg)](https://jitpack.io/#yunlongyang/lightandroid)
 <pre>
 dependencies {
-    implementation 'com.github.yunlongyang:lightandroid:1.0.2'
+    implementation 'com.github.yunlongyang:lightandroid:version'
 }
 </pre>
 Step 3.　Start LightAndroid in your application.
@@ -34,8 +35,8 @@ public class MainApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        lightAndroidApplicationLike = new LightAndroidApplicationLike();
-        lightAndroidApplicationLike.onCreate(this);
+        lightAndroidApplicationLike = new LightAndroidApplicationLike.Builder().setLeakCanaryEnable(true/false).build();
+               lightAndroidApplicationLike.onCreate(this);
     }
 }
 </pre>

@@ -5,7 +5,6 @@ group='com.github.YunlongYang'
 
 android {
     compileSdkVersion CompileSdkVersion as int
-    buildToolsVersion BuildToolsVersion
     defaultConfig {
         minSdkVersion MinSdkVersion as int
         targetSdkVersion TargetSdkVersion as int
@@ -39,12 +38,12 @@ dependencies {
     releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$LeakCanaryVersion"
 
     // 2. glide
-    compile "com.github.bumptech.glide:glide:$GlideVersion"
+    api "com.github.bumptech.glide:glide:$GlideVersion"
     annotationProcessor "com.github.bumptech.glide:compiler:$GlideVersion"
 
     // 3. logback
-    compile 'org.slf4j:slf4j-api:1.7.25'
-    compile 'com.github.tony19:logback-android:1.1.1-8'
+    api 'org.slf4j:slf4j-api:1.7.25'
+    api 'com.github.tony19:logback-android:1.1.1-8'
 
     // None. RxPermissions
 //    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5'

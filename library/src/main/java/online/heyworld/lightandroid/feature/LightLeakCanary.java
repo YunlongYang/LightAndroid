@@ -31,4 +31,10 @@ public class LightLeakCanary {
         }
     }
 
+    public static class Switch{
+        public static void setEnable(boolean enable) {
+            sEnable = enable;
+        }
+    }
+
 }
